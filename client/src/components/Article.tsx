@@ -72,7 +72,7 @@ export const Article: React.FC<Props> = ({
           id="body"
           placeholder="Description"
           onChange={handleArticleData}
-          defaultValue={article.title}
+          defaultValue={article.body}
         />
       </div>
       <button
