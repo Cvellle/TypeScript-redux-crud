@@ -10,4 +10,4 @@ React Hooks
 
 ## Live version
 
-This project is deployed at: [https://articles1.web.app](https://articles1.web.app/).
+This project is deployed at: [https://articles1.web.app](https://articles1.web.app/)
