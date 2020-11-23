@@ -5,14 +5,15 @@ const initialState: ArticleState = {
     {
       id: 1,
       title: "title 1",
-      body: "body 1",
+      body: "This story follows the...",
     },
     {
       id: 2,
       title: "title 2",
-      body: "body 2",
+      body: "This story tells about...",
     },
   ],
+  updatedArticle: { id: 0, title: "", body: "" },
 };
 
 const reducer = (
@@ -23,15 +24,15 @@ const reducer = (
     case actionTypes.GET_ARTICLES:
       return {
         ...state,
-        articles: action.data,
       };
+
     case actionTypes.ADD_ARTICLE:
       const newArticle: IArticle = {
-        id: Math.random(), // not really unique but it's just an example
+        id: action.article.id,
         title: action.article.title,
         body: action.article.body,
-        // message: action.article.message,
       };
+      console.log(action.article.id);
       return {
         ...state,
         articles: state.articles.concat(newArticle),
@@ -44,9 +45,15 @@ const reducer = (
         ...state,
         articles: updatedArticles,
       };
+    case actionTypes.SET_UPDATED_ARTICLE:
+      const updatedArticle: IArticle = action.article;
+      return {
+        ...state,
+        updatedArticle: updatedArticle,
+      };
     case actionTypes.EDIT_ARTICLE:
       const editedArticles: IArticle[] = state.articles.map((article) =>
-        article.id !== action.article.id ? article : action.updatedArticle
+        article.id !== action.article.id ? article : state.updatedArticle
       );
       return {
         ...state,

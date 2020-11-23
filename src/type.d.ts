@@ -6,12 +6,12 @@ interface IArticle {
 
 type ArticleState = {
   articles: IArticle[];
+  updatedArticle: IArticle;
 };
 
 type ArticleAction = {
   type: string;
   article: IArticle;
-  updatedArticle?: IArticle | any;
   data?: ArticleState | any;
 };
 

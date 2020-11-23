@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Nunito, sans-serif;
+  background: url("https://fatstacksblog.com/wp-content/uploads/2019/11/Person-writing-article-nov26.jpg");
+  background-size: 100%;
+  background-attachment: fixed;
+}
+
+main {
+  max-width: 30rem;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+
+main > h1 {
+  text-align: center;
+}
+
+.Add-article {
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  opacity: 0.95;
+}
+
+.Add-article input,
+.Add-article textarea {
+  display: block;
+  font-family: Arial;
+  margin: 1rem auto;
+  width: 20rem;
+  padding: 0.5rem;
+  border: 1px solid #00b8e6;
+  border-radius: 10px;
+  outline: none;
+}
+
+.Add-article textarea {
+  height: 4vw;
+  resize: none;
+}
+
+.Add-article button {
+  width: 21rem;
+  padding: 0.7rem;
+  border: 1px solid #00b8e6;
+  background: #00b8e6;
+  color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  outline: none;
+}
+
+.Add-article button:hover {
+  background: #0093b8;
+}
+
+.Add-article button:disabled {
+  background: #d8d8d8;
+  border: 1px solid #d8d8d8;
+  cursor: not-allowed;
+}
+
+.Article {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 2vw 0;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 10px;
+  align-items: center;
+  opacity: 0.95;
+}
+
+.Article h4 {
+  color: #222;
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-top: 2vw;
+}
+
+.Article p {
+  flex: 1 1 100%;
+  padding-right: 1rem;
+  color: #444;
+}
+
+.Article p:nth-child(1) {
+  border-radius: 1vw;
+  display: block;
+  flex: 1 1 60%;
+  margin-top: 2vw;
+  justify-content: center;
+  height: 2vw;
+  padding: 0 1vw;
+}
+
+.Article p:nth-child(2) {
+  border-radius: 1.5vw;
+  display: block;
+  flex: 1 1 100%;
+  height: 4vw;
+  margin-top: 2vw;
+  justify-content: center;
+  padding: 0 1vw;
+}
+
+.Article input,
+.Article textarea {
+  outline: none;
+  display: block;
+  flex: 1 1 100%;
+  font-family: Arial;
+  padding: 0.5vw;
+}
+
+.Article input:nth-child(1) {
+  border-radius: 1vw;
+  flex: 1 1 60%;
+  margin-top: 3vw;
+  justify-content: center;
+  height: 2vw;
+  border: 0.2rem solid rgba(0, 0, 0, 0.726);
+}
+
+.Article textarea {
+  border-radius: 1.5vw;
+  display: block;
+  flex: 1 1 100%;
+  height: 5vw;
+  margin-top: 2vw;
+  resize: none;
+  border: 0.2rem solid rgba(0, 0, 0, 0.726);
+}
+
+.Article button {
+  flex: 1 1 60%;
+  padding: 0.5rem 0.7rem;
+  border: none;
+  background: #5e3333;
+  color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  outline: none;
+}
+
+.Article button:hover {
+  background: #e06a6a;
+}

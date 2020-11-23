@@ -1,13 +1,11 @@
-import React, { useCallback, useState, useEffect } from "react";
+import React, { useCallback, useState } from "react";
 import { Dispatch } from "redux";
 import { useDispatch } from "react-redux";
+import { setUpdatedArticle } from "./../store/actionCreators";
 
 type Props = {
   article: IArticle;
-  editArticle: (
-    article: IArticle,
-    updatedArticle: IArticle | undefined
-  ) => void;
+  editArticle: (article: IArticle) => void;
   removeArticle: (article: IArticle) => void;
 };
 
@@ -17,27 +15,31 @@ export const Article: React.FC<Props> = ({
   removeArticle,
 }) => {
   const dispatch: Dispatch<any> = useDispatch();
-  const [updatedArticle, setUpdatedArticle] = useState<IArticle | undefined>();
 
-  const handleArticleData = (e: React.FormEvent<HTMLInputElement>) => {
-    // const { id, value } = e.target;
-    setUpdatedArticle({
-      ...article,
-      id: article.id,
-      [e.currentTarget.id]: e.currentTarget.value,
-    });
+  const handleArticleData = (
+    e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { id, value } = e.currentTarget;
+    dispatch(
+      setUpdatedArticle({
+        ...article,
+        id: article.id,
+        title: article.title,
+        [id]: value,
+      })
+    );
+    setUpdatedArticleBoolean(true);
   };
 
-  const updateArticle = (
-    article: IArticle,
-    updatedArticle: IArticle | undefined
-  ) => {
-    editUseCallBack(article, updatedArticle);
+  const [updatedArticleBoolean, setUpdatedArticleBoolean] = useState(false);
+
+  const updateArticle = (article: IArticle) => {
+    editUseCallBack(article);
+    setUpdatedArticleBoolean(false);
   };
 
   const editUseCallBack = useCallback(
-    (article: IArticle, updatedArticle: IArticle | undefined) =>
-      dispatch(editArticle(article, updatedArticle)),
+    (article: IArticle) => dispatch(editArticle(article)),
     [dispatch, editArticle]
   );
 
@@ -51,10 +53,7 @@ export const Article: React.FC<Props> = ({
   return (
     <div className="Article">
       <div>
-        <p>{article.id}</p>
-      </div>
-      <div>
-        <p>{article.title}</p>
+        <h4>{article.title}</h4>
       </div>
       <div>
         <p>{article.body}</p>
@@ -67,18 +66,17 @@ export const Article: React.FC<Props> = ({
           onChange={handleArticleData}
           defaultValue={article.title}
         />
-        <input
-          type="text"
+        <textarea
           id="body"
           placeholder="Description"
           onChange={handleArticleData}
           defaultValue={article.body}
-        />
+        ></textarea>
       </div>
       <button
-        onClick={() => updateArticle(article, updatedArticle)}
+        onClick={() => updateArticle(article)}
         className="Add-article"
-        disabled={updatedArticle === undefined ? true : false}
+        disabled={!updatedArticleBoolean}
       >
         Edit
       </button>
