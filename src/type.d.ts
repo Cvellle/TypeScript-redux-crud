@@ -12,7 +12,6 @@ type ArticleState = {
 type ArticleAction = {
   type: string;
   article: IArticle;
-  data?: ArticleState | any;
 };
 
 type DispatchType = (args: ArticleAction) => ArticleAction;
