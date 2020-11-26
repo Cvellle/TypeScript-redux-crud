@@ -53,7 +53,7 @@ export const Article: React.FC<Props> = ({
   return (
     <div className="Article">
       <div>
-        <h4>{article.title}</h4>
+        <h4>{article.id}</h4>
       </div>
       <div>
         <p>{article.body}</p>
