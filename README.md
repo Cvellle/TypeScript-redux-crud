@@ -1,8 +1,6 @@
 # Articles crud
 
-# Avologic
-
-Multi routes site built with Handlebars
+Create, update, delete posts with TypeScript and React
 
 ## Live at: [https://articles1.web.app](https://articles1.web.app/)
 
@@ -10,9 +8,11 @@ Multi routes site built with Handlebars
 
 **1.** **TypeScript**
 
-**2.** **Redux ^4.0.5** - (useDispatch, useSelectors)
+**2.** **React**
 
-**3.** **React Hooks**
+**3.** **Redux ^4.0.5** - (useDispatch, useSelectors)
+
+**4.** **React Hooks**
 
 :octocat:
 
