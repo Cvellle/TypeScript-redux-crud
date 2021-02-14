@@ -1,13 +1,35 @@
 # Articles crud
 
-## Tech stack
+# Avologic
 
-TypeScript
+Multi routes site built with Handlebars
 
-Redux ^4.0.5 (useDispatch, useSelectors)
+## Live at: [https://articles1.web.app](https://articles1.web.app/)
 
-React Hooks
+## Stack
 
-## Live version
+**1.** **TypeScript**
 
-This project is deployed at: [https://articles1.web.app](https://articles1.web.app/)
+**2.** **Redux ^4.0.5** - (useDispatch, useSelectors)
+
+**3.** **React Hooks**
+
+:octocat:
+
+```
+git clone https://github.com/Cvellle/TypeScript-redux-crud.git
+```
+
+## Terminal instructions
+
+```
+npm install
+```
+
+:rocket:
+
+```
+npm start
+```
+
+:sparkles:
